@@ -10,6 +10,7 @@ const port = process.argv[2] || defaultPort;
 // Middleware for parsing URL-encoded form data
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+// app.use(express.static())
 
 // Middleware for serving static files
 app.use(express.static(__dirname));
@@ -18,9 +19,9 @@ app.use(express.static(__dirname));
 let users = {"bob":"1234"};
 
 // Serve the home page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.html'));
+// });
 
 // Serve the registration form
 app.get('/register', (req, res) => {
