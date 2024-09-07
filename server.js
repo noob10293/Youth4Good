@@ -21,21 +21,21 @@ app.get('/', (req, res) => {
 });
 
 // Serve the registration form
-// app.get('/register', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'register.html'));
-// });
+app.get('/register', (req, res) => {
+  res.sendFile(path.join(__dirname, 'register.html'));
+});
 
-// // Handle registration form submission
-// app.post('/register', (req, res) => {
-//   const { username, password } = req.body;
+// Handle registration form submission
+app.post('/register', (req, res) => {
+  const { username, password } = req.body;
 
-//   if (users[username]) {
-//     return res.send('User already exists. <a href="/register">Try again</a>');
-//   }
+  if (users[username]) {
+    return res.send('User already exists. <a href="/register">Try again</a>');
+  }
 
-//   users[username] = password;
-//   res.send('Registration successful! <a href="/login">Login</a>');
-// });
+  users[username] = password;
+  res.send('Registration successful! <a href="/login">Login</a>');
+});
 
 // Serve the login form
 app.get('/login', (req, res) => {
