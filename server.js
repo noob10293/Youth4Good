@@ -53,4 +53,5 @@ app.post('/logout', (req, res) => {
     res.cookie('username', "", { httpOnly: true });
     res.cookie('loggedin', false);
   }
+  res.send()
 });
