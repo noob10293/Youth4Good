@@ -22,7 +22,7 @@ app.post('/register', (req, res) => {
   const { username, password } = req.body;
 
   if (users[username]) {
-    return res.send('User already exists. <a href="/register">Try again</a>');
+    return res.send('User already exists. <a href="/signup.html">Try again</a>');
   }
 
   users[username] = password;
@@ -35,8 +35,7 @@ app.post('/login', (req, res) => {
 
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
-    res.cookie('loggedin', true);
-    console.log(req.cookies)
+    res.cookie('localusername', username);
     res.redirect("index.html")
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
@@ -50,10 +49,9 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
-  res.cookie('loggedin', '');
+  res.cookie('localusername', '');
   if (req.cookies.loggedin) {
     res.cookie('username', "", { httpOnly: true });
   }
-  console.log(req.cookies)
   res.redirect("index.html")
 });

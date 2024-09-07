@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel="stylesheet" href="css/index.CSS"> -->
+    <link rel="stylesheet" href="css/index.CSS">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,19 @@
     <script src="js/index.js"></script> -->
 </head>
 <body>
-  <div id="calendar"></div>
-  <script src="events.js"></script>
-  
+  <h2>Create Event</h2>
+  <form action="/login" method="post">
+      <label for="eventname">Event Name:</label>
+      <input type="text" id="eventname" name="username" required>
+      <label for="date">Password:</label>
+      <input type="datetime" id="date" name="date" required>
+      <label for = "eventdescription">Event Description:</label>
+      <input type="text" id="eventdescription" name="eventdescription"</label>
+      <button type="submit">Create an Event</button>
+  </form>
+  <p><a href="index.html">Back to Home</a></p>
+</div>
+</div>
 </body>
 </body>
 </html>

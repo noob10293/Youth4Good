@@ -4,10 +4,8 @@
 /* THEME:
 light blue, white, and gray
  */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+html {
+  background-color:#4cd8c3;
 }
 
 body {
