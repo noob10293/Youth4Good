@@ -1,0 +1,86 @@
+/*
+ *  General Styles
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+ *  Layout Styles
+ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.col {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+/*
+ *  Typography Styles
+ */
+
+.heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/*
+ *  Button Styles
+ */
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
