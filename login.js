@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Redirect logged-in users from login page
     if (username) {
-        window.location.href = '';
+        window.location.href = 'index.html';
     }
 });
