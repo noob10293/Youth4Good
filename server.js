@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
-
+cookieparser()
 // Handle login form submission
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
