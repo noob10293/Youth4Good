@@ -42,12 +42,13 @@ app.post('/register', (req, res) => {
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'login.html'));
 });
-cookieparser()
+
 // Handle login form submission
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
   if (users[username] && users[username] === password) {
+    res.cookie('username', username, { httpOnly: true });
     res.send(`Login successful! Welcome, ${username}. <a href="/">Home</a>`);
   } else {
     res.send('Invalid credentials. <a href="/login">Try again</a>');
