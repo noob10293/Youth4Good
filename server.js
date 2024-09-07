@@ -49,6 +49,7 @@ app.post('/login', (req, res) => {
 
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
+    res.cookie('loggedin', true);
     res.send(`Login successful! Welcome, ${username}. <a href="/">Home</a>`);
   } else {
     res.send('Invalid credentials. <a href="/login">Try again</a>');
