@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3000;
+const defaultPort = 3000;
+
+// Get port from command-line argument or environment variable
+const port = process.argv[2] || defaultPort;
 
 // Middleware for parsing URL-encoded form data
 app.use(express.urlencoded({ extended: false }));
