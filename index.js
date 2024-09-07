@@ -7,19 +7,19 @@ const port = 3000;
 app.use(express.urlencoded({ extended: false }));
 
 // Middleware for serving static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
 let users = {};
 
 // Serve the home page
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Serve the registration form
 app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'register.html'));
+  res.sendFile(path.join(__dirname, 'register.html'));
 });
 
 // Handle registration form submission
@@ -36,7 +36,7 @@ app.post('/register', (req, res) => {
 
 // Serve the login form
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 // Handle login form submission
