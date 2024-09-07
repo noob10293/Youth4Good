@@ -43,8 +43,8 @@ app.get('/', (req, res) => {
 // sendBtn.addEventListener('click', () => {
 //   const message = messageInput.value;
 //   socket.send(JSON.stringify(message));
-   messageInput.value = '';
- });
+//    messageInput.value = '';
+//  });
 
 const port = parseInt(process.env.PORT) || 3000;
 app.listen(port, () => {
