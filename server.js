@@ -10,23 +10,12 @@ const port = process.argv[2] || defaultPort;
 // Middleware for parsing URL-encoded form data
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static())
 
 // Middleware for serving static files
 app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
 let users = {"bob":"1234"};
-
-// Serve the home page
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// });
-
-// Serve the registration form
-app.get('/register', (req, res) => {
-  res.sendFile(path.join(__dirname, 'register.html'));
-});
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
@@ -38,11 +27,6 @@ app.post('/register', (req, res) => {
 
   users[username] = password;
   res.send('Registration successful! <a href="/login">Login</a>');
-});
-
-// Serve the login form
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 // Handle login form submission
