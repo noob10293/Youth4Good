@@ -36,7 +36,8 @@ app.post('/login', (req, res) => {
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
     res.cookie('loggedin', true);
-    res.send(`Login successful! Welcome, ${username}. <script src="/js/cookie.js"></script><script src="/js/login.js"></script>`);
+    console.log(req.cookies)
+    res.redirect("index.html")
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
@@ -49,10 +50,10 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
-  console.log(req.cookies)
   res.cookie('loggedin', '');
-  // if (req.cookies.loggedin) {
-  //   res.cookie('username', "", { httpOnly: true });
-  // }
+  if (req.cookies.loggedin) {
+    res.cookie('username', "", { httpOnly: true });
+  }
+  console.log(req.cookies)
   res.redirect("index.html")
 });
