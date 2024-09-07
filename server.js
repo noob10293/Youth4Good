@@ -22,10 +22,11 @@ app.post('/register', (req, res) => {
   const { username, password } = req.body;
 
   if (users[username]) {
-    return res.send('User already exists. <a href="/register">Try again</a>');
+    return res.send('User already exists. <a href="/signup.html">Try again</a>');
   }
 
   users[username] = password;
+  console.log(`${username} registered with password ${password}`)
   res.send('Registration successful! <a href="/login.html">Login</a>');
 });
 
@@ -35,8 +36,8 @@ app.post('/login', (req, res) => {
 
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
-    res.cookie('loggedin', true);
-    res.send(`Login successful! Welcome, ${username}. <script src="/js/cookie.js"></script><script src="/js/login.js"></script>`);
+    res.cookie('localusername', username);
+    res.redirect("index.html")
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
@@ -49,10 +50,9 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
-  console.log(req.cookies)
-  res.cookie('loggedin', '');
-  // if (req.cookies.loggedin) {
-  //   res.cookie('username', "", { httpOnly: true });
-  // }
+  res.cookie('localusername', '');
+  if (req.cookies.loggedin) {
+    res.cookie('username', "", { httpOnly: true });
+  }
   res.redirect("index.html")
 });

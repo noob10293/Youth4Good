@@ -1,7 +1,5 @@
-console.log("LOGIN>JIS")
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("HI")
-    const username = getCookie('loggedin');
+    const username = getCookie('localusername');
 
     // Redirect logged-in users from login page
     if (username) {
