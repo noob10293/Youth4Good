@@ -123,7 +123,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 50px;
-  background: url('youth4good.png') no-repeat center center/cover;
+  background: url('/img/youth4good.png') no-repeat center center/cover;
   color: white;
 }
 .hero h1 {
