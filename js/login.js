@@ -1,5 +1,3 @@
-import getCookie from 'cookie.js';
-
 console.log("LOGIN>JIS")
 document.addEventListener('DOMContentLoaded', () => {
     console.log("HI")

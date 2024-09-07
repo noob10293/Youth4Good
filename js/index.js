@@ -1,10 +1,10 @@
 // Adjust UI based on login state
 document.addEventListener('DOMContentLoaded', () => {
-    const username = getCookie('username');
+    const loggedin = getCookie('loggedin');
 
     // Hide login link if user is logged in
-    const loginLink = document.getElementById('login-link');
-    if (loginLink && username) {
+    const loginLink = document.getElementById('login');
+    if (loginLink && loggedin) {
         loginLink.style.display = 'none';
     }
 });
