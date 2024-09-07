@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Signup</title>
-        <style>
-            :root {
-  --my-width: 20rem;
-}
-            div {
-                text-align: center;
-                width: var(--my-width)
-                padding-left:calc(50% - var(--my-width)):
-                background-color: #4cd8c3;
-            }
-            
-            div {
-                
-            }
-        </style>
-    </head>
-<div>
-    <h1> Sign up for Youth4Good</h1>
-    <div id="username"><p>Username: </p><input></input></div>
-
-    <div id="password"> </div><p>Password:</p><input></input></div>
-</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    html{
+        background-color: #4cd8c3;
+    }
+    form {
+        width: 20rem;
+        height: 40rem;
+        border-weight:100px;
+        border-color:rgb(0,0,0);
+    }
+  </style>
+</head>
+<body>
+  <h2>Signup for Youth4Good </h2>
+  <form action="/register" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Register</button>
+  <p><a href="/">Back to Home</a></p>
+</form>
+</body>
+</html>

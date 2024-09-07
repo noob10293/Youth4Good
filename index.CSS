@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-  color: black;
+  color: whitesmoke;
 }
 h2,
 h3,
@@ -117,7 +117,7 @@ nav a:hover {
 .hero {
   text-align: center;
   padding: 50px;
-  background: url('hero-image.jpg') no-repeat center center/cover;
+  background: url('youth4good.png') no-repeat center center/cover;
   color: white;
 }
 .hero h1 {
