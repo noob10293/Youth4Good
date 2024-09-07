@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
-let users = {"bob":"abcd"};
+let users = {"bob":"1234"};
 
 // Serve the home page
 app.get('/', (req, res) => {
@@ -47,11 +47,11 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  if (users[username] && users[username] === password) 
+  if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
     res.cookie('loggedin', true);
-    res.send`Login successful! Welcome, ${username}. <script href="/"></script>`;
-   else {
+    res.send`Login successful! Welcome, ${username}. <script src="/js/login.js"></script>`;
+  }else {
     res.send('Invalid credentials. <a href="/login">Try again</a>');
   }
 });
