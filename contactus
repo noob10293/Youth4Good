@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Kids4Good | Contact Us</title>
+    <title>Youth4Good | Contact Us</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -90,7 +90,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Kids4Good</h1>
+        <h1>Youth4Good</h1>
         <p>Contact Us and Let's Make a Difference Together!</p>
     </header>
 
@@ -106,7 +106,7 @@
     <!-- Contact Us Form -->
     <section class="contact-container">
         <h2>Contact Us</h2>
-        <form action="mailto:info@kids4good.org" method="POST" enctype="text/plain">
+        <form action="mailto:info@youth4good.org" method="POST" enctype="text/plain">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -131,7 +131,7 @@
             and 
             <a href="https://www.linkedin.com/company/youth4good-non-profit/" target="_blank">LinkedIn</a>
         </p>
-        <p>&copy; 2024 Kids4Good. All Rights Reserved.</p>
+        <p>&copy; 2024 Youth4Good. All Rights Reserved.</p>
     </footer>
 
 </body>
