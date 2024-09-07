@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
-let users = {};
+let users = {"bob":"abcd"};
 
 // Serve the home page
 app.get('/', (req, res) => {
