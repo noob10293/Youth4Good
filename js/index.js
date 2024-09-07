@@ -4,7 +4,6 @@ function getCookie(name) {
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
-  
 // Adjust UI based on login state
 document.addEventListener('DOMContentLoaded', () => {
     const username = getCookie('username');
