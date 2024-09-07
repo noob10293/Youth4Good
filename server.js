@@ -8,6 +8,7 @@ const port = process.argv[2] || defaultPort;
 
 // Middleware for parsing URL-encoded form data
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 // Middleware for serving static files
 app.use(express.static(__dirname));
