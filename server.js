@@ -11,7 +11,7 @@ const port = process.argv[2] || defaultPort;
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Middleware for serving static files
+// serve everything lol
 app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
@@ -45,4 +45,11 @@ app.post('/login', (req, res) => {
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
+});
+
+// Handle registration form submission
+app.post('/logout', (req, res) => {
+  if (users[username] && users[username] === password) {
+    res.cookie('username', username, { httpOnly: true });
+    res.cookie('loggedin', true);
 });
