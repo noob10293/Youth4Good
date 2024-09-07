@@ -50,6 +50,7 @@ app.listen(port, () => {
 // Handle registration form submission
 app.post('/logout', (req, res) => {
   if (users[username] && users[username] === password) {
-    res.cookie('username', username, { httpOnly: true });
-    res.cookie('loggedin', true);
+    res.cookie('username', null, { httpOnly: true });
+    res.cookie('loggedin', false);
+  }
 });
