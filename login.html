@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Login</title>
-        <style>
-            body{
-            background-color: #4cd8c3;
-            padding: 30px;
-            color: rgb(0, 0, 0);
-            }
-            div {
-            text-align:center;
-            width: 20rem;
-            height: 30rem;
-            }
-        </style>
-    </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+      body{
+      background-color: #4cd8c3;
+      padding: 30px;
+      color: rgb(0, 0, 0);
+      }
+      div {
+      text-align:center;
+      width: 20rem;
+      height: 30rem;
+      }
+  </style>
+</head>
 <body>
-<div>
-    <h1> Login to Youth4Good</h1>
-    <input>Username:</input>
-    <input>Password:</input>
-</div>
+  <h2>Login</h2>
+  <form action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <button type="submit">Login to Youth4Good</button>
+  </form>
+  <p><a href="/">Back to Home</a></p>
 </body>
 </html>
