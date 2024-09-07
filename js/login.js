@@ -4,6 +4,7 @@ function getCookie(name) {
     if (parts.length === 2) return parts.pop().split(';').shift();
 }
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("HI")
     const username = getCookie('loggedin');
 
     // Redirect logged-in users from login page
