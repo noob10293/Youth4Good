@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
-let users = {"bob":"1234"};
+let users = {"bob":"1234","e":"1"};
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
@@ -26,7 +26,7 @@ app.post('/register', (req, res) => {
   }
 
   users[username] = password;
-  console.log(`${username} registered with password ${password}`)
+  console.log(`"${username}" registered with password "${password}".`)
   res.send('Registration successful! <a href="/login.html">Login</a>');
 });
 
@@ -37,6 +37,7 @@ app.post('/login', (req, res) => {
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
     res.cookie('localusername', username);
+    console.log(`"${username}" signed in.`)
     res.redirect("index.html")
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
@@ -50,9 +51,10 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
-  res.cookie('localusername', '');
-  if (req.cookies.loggedin) {
+  console.log(`${req.cookies.localusername} logged out.`)
+  if (req.cookies.localusername) {
     res.cookie('username', "", { httpOnly: true });
+    res.cookie('localusername', '');
   }
   res.redirect("index.html")
 });
