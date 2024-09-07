@@ -38,7 +38,7 @@ app.post('/login', (req, res) => {
     res.cookie('loggedin', true);
     res.send`Login successful! Welcome, ${username}. <script src="/js/login.js"></script>`;
   }else {
-    res.send('Invalid credentials. <a href="/login">Try again</a>');
+    res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
 });
 
@@ -49,6 +49,7 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
+  console.log("HIIHIHIH")
   // console.log(req.cookies)
   // if (req.cookies.loggedin) {
   //   res.cookie('username', "", { httpOnly: true });
