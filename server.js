@@ -49,9 +49,10 @@ app.listen(port, () => {
 
 // Handle registration form submission
 app.post('/logout', (req, res) => {
-  if (req.cookies.loggedin) {
-    res.cookie('username', "", { httpOnly: true });
+  // console.log(req.cookies)
+  // if (req.cookies.loggedin) {
+  //   res.cookie('username', "", { httpOnly: true });
     res.cookie('loggedin', false);
-  }
-  res.send()
+  // }
+  res.redirect("index.html")
 });
