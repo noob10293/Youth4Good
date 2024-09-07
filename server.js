@@ -8,6 +8,7 @@ const defaultPort = 3000;
 const port = process.argv[2] || defaultPort;
 
 // Middleware for parsing URL-encoded form data
+app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
