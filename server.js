@@ -26,6 +26,7 @@ app.post('/register', (req, res) => {
   }
 
   users[username] = password;
+  console.log(`${username} registered with password ${password}`)
   res.send('Registration successful! <a href="/login.html">Login</a>');
 });
 

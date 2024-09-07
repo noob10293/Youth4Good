@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Hide login link if user is logged in
     const loginLink = document.getElementById('login');
-    const logout = document.getElementById('localusername');
+    const profile = document.getElementById('profile');
     if (loggedin) {
         loginLink.style.display = 'none';
-        logout.style.display = 'block';
+        profile.style.display = 'block';
     }
 });
