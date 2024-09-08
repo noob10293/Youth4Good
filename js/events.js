@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
   .then(data => {
       // Update the page with the received data
-      for (let event : data.data)
-      document.getElementById('result').innerHTML = `
+      for (let event of data.data){
+
+      <div class="project">
+          <h3>Food Sorting at Food Bank</h3>
+          <p>2023-12-19</p>
+      </div>
+      }
+      document.getElementById('projects').innerHTML += `
           <p>Message: ${data.message}</p>
           <p>Timestamp: ${data.timestamp}</p>
       `;
