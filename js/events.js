@@ -8,23 +8,28 @@ document.addEventListener('DOMContentLoaded', () => {
   if (loggedin) {
       eventform.style.display = 'block';
   }
+  fetch('/eventinfo')
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      // Update the page with the received data
+      for (let event : data.data)
+      document.getElementById('result').innerHTML = `
+          <p>Message: ${data.message}</p>
+          <p>Timestamp: ${data.timestamp}</p>
+      `;
+      <div class="project">
+          <h3>Food Sorting at Food Bank</h3>
+          <p>2023-12-19</p>
+      </div>
+  })
+  .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+  });
 });
 
 const calendarContainer = document.getElementById('calendar');
-
-// const events = [
-//     { date: '2024-09-10', title: 'Event 1' },
-//     { date: '2024-09-12', title: 'Event 2' },
-// // Function to create a calendar grid
-// function createCalendarGrid(year, month) {
-//     // ... logic to create the grid based on the year and month
-//   }
-// function poulateEvents(events)
-// {
-//  //logic
-// }
-
-// const currentYear = new Date().getFullYear();
-// const currentMonth = new Date().getMonth();
-// createCalendarGrid(currentYear, currentMonth);
-// populateEvents(events);

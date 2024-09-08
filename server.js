@@ -76,6 +76,10 @@ app.post('/createevent', (req, res) => {
   }
 });
 
+app.get('/eventinfo', (req, res) => {
+  res.json({"data":events});
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
