@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!response.ok) {
           throw new Error('Network response was not ok');
       }
-      return response.json(); // Parse JSON data from response
+      return response.json();
   })
   .then(data => {
       // Update the page with the received data
