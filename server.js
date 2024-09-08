@@ -26,8 +26,7 @@ class event{
 let users = {"bob":"1234","e":"1"};
 let events = [new event("Planting Trees for the Future", "somewhere", "date"
 , "Join our tree-planting initiative to help make our planet greener."),
-new event("Planting Trees for the Future", "location", "MM/DD/YYYY", "Description"),
-new event("Planting Trees for the Future", "location", "MM/DD/YYYY", "Description"),
+new event("Creating Art for A Cause", "location", "MM/DD/YYYY", "Description"),
 new event("Beach Cleanup; Day","location","MM/DD?YYYY","Description")]
 
 // Handle registration form submission
@@ -41,6 +40,10 @@ app.post('/register', (req, res) => {
   users[username] = password;
   console.log(`"${username}" registered with password "${password}".`)
   res.send('Registration successful! <a href="/login.html">Login</a>');
+});
+
+app.get('/events.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'events.html'));
 });
 
 // Handle login form submission
