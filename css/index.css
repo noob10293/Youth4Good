@@ -107,7 +107,7 @@ body {
 header {
   /*background-color: #4cd8c3;*/
   padding: 30px;
-  color: white;
+  background: url('/img/image.png') no-repeat center center/cover;
   text-align: center;
 
 }
