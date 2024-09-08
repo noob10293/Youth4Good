@@ -77,6 +77,7 @@ app.post('/createevent', (req, res) => {
 });
 
 app.get('/eventinfo', (req, res) => {
+  console.log("fetch")
   res.json({"data":events});
 });
 

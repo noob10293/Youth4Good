@@ -18,20 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(data => {
       // Update the page with the received data
       for (let event of data.data){
+      document.getElementById('projects').innerHTML += `
 
       <div class="project">
-          <h3>Food Sorting at Food Bank</h3>
-          <p>2023-12-19</p>
+          <h3>${event.name}</h3>
+          <h2>Date: ${event.date}</h2>
+          <h2>Location: ${event.location}</h2>
+          <p>${event.description}</p>
       </div>
-      }
-      document.getElementById('projects').innerHTML += `
-          <p>Message: ${data.message}</p>
-          <p>Timestamp: ${data.timestamp}</p>
       `;
-      <div class="project">
-          <h3>Food Sorting at Food Bank</h3>
-          <p>2023-12-19</p>
-      </div>
+      }
   })
   .catch(error => {
       console.error('There has been a problem with your fetch operation:', error);
