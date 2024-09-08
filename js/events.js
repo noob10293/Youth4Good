@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <div class="project">
           <h3>${event.name}</h3>
-          <h2>Date: ${event.date}</h2>
-          <h2>Location: ${event.location}</h2>
+          <h3>Date: ${event.date}</h3>
+          <h3>Location: ${event.location}</h3>
           <p>${event.description}</p>
       </div>
       `;

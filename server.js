@@ -24,10 +24,10 @@ class event{
 }
 // In-memory storage for users (for simplicity)
 let users = {"bob":"1234","e":"1"};
-let events = [new event("Planting Trees for the Future", "somewhere", "date"
+let events = [new event("Planting Trees for the Future", "Fremont Park", "1/1/2000"
 , "Join our tree-planting initiative to help make our planet greener."),
-new event("Creating Art for A Cause", "location", "MM/DD/YYYY", "Description"),
-new event("Beach Cleanup; Day","location","MM/DD?YYYY","Description")]
+new event("Creating Art for A Cause", "Pleasanton library", "12/12/1222", "Help make art for the needy."),
+new event("Beach Cleanup; Day","San Jose Beach","5/5/2024","Save our sea turtles.")]
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
@@ -66,11 +66,11 @@ app.post('/createevent', (req, res) => {
 
   if (req.cookies.username) {
     events.push(new event(name,location,date,description))
-    res.redirect("index.html")
     console.log(`"${req.cookies.username}" created ${name}
     ${location}
     ${date}
     ${description}`)
+    res.redirect("events.html")
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
