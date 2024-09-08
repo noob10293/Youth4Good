@@ -16,7 +16,7 @@ app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
 let users = {"bob":"1234","e":"1"};
-let events = {"bob":"1234","e":"1"};
+let events = {"name":};
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
