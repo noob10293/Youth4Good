@@ -65,8 +65,7 @@ app.post('/createevent', (req, res) => {
   const { name,location,date,description } = req.body;
 
   if (req.cookies.username) {
-    res.cookie('username', username, { httpOnly: true });
-    res.cookie('localusername', username);
+    events.push(new event(name,location,date,description))
     res.redirect("index.html")
     console.log(`"${req.cookies.username}" created ${name}
     ${location}
