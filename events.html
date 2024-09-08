@@ -75,14 +75,14 @@
 <div id = "eventform"class="eventform" style="display: none;">
   <h3 style = "text-align:center;"> Create an Event</h1>
   <form action="/createevent" method="post">
-      <label for="eventname" placeholder:>Event Name:</label>
-      <input type="text" id="eventname" name="username" required>
+      <label for="location" placeholder:>Event location:</label>
+      <input type="text" id="location" name="location" required>
   </br>
-      <label for="date">Password:</label>
+      <label for="date">Event time:</label>
       <input type="datetime" id="date" name="date" required>
 </br>
-      <label for = "eventdescription">Event Description:</label>
-      <input type="text" id="eventdescription" name="eventdescription"</label>
+      <label for = "eventdescription">Event Description (What volunteers will be doing, purpose of event, etc.):</label>
+      <input type="text" id="eventdescription" name="eventdescription">
     </br>
       <button type="submit">Create an Event</button>
   </form>

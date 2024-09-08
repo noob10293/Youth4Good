@@ -105,10 +105,12 @@ body {
   background-color: #9bfcfffa;
 }
 header {
-  background-color: #4cd8c3;
+  /*background-color: #4cd8c3;*/
   padding: 30px;
   color: white;
   text-align: center;
+  background: url('/img/youth4good.png') no-repeat center center/cover;
+
 }
 nav {
   display: flex;

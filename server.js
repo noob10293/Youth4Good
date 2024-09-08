@@ -7,8 +7,7 @@ const defaultPort = 3000;
 // Get port from command-line argument or environment variable
 const port = process.argv[2] || defaultPort;
 
-// Middleware for parsing URL-encoded form data
-app.set('view engine', 'ejs');
+// boilerplate
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
@@ -33,6 +32,20 @@ app.post('/register', (req, res) => {
 
 // Handle login form submission
 app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (users[username] && users[username] === password) {
+    res.cookie('username', username, { httpOnly: true });
+    res.cookie('localusername', username);
+    console.log(`"${username}" signed in.`)
+    res.redirect("index.html")
+  }else {
+    res.send('Invalid credentials. <a href="login.html">Try again</a>');
+  }
+});
+
+// Handle event form submission
+app.post('/eventform', (req, res) => {
   const { username, password } = req.body;
 
   if (users[username] && users[username] === password) {
