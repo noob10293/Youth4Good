@@ -14,9 +14,19 @@ app.use(cookieParser());
 // serve everything lol
 app.use(express.static(__dirname));
 
+class event{
+  constructor(name,location,date,description){
+    this.name = name;
+    this.location = location;
+    this.date = date;
+    this.description = description;
+  }
+}
 // In-memory storage for users (for simplicity)
 let users = {"bob":"1234","e":"1"};
-let events = {"name":};
+let events = [new event("Planting Trees for the Future", "somewhere", "date"
+, "Join our tree-planting initiative to help make our planet greener."),
+new event(Planting Trees for the Future")];
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
@@ -47,13 +57,16 @@ app.post('/login', (req, res) => {
 
 // Handle event form submission
 app.post('/createevent', (req, res) => {
-  const { location,date,description } = req.body;
+  const { name,location,date,description } = req.body;
 
-  if (users[username] && users[username] === password) {
+  if (req.cookies.username) {
     res.cookie('username', username, { httpOnly: true });
     res.cookie('localusername', username);
-    console.log(`"${username}" signed in.`)
     res.redirect("index.html")
+    console.log(`"${req.cookies.username}" created ${name}
+    ${location}
+    ${date}
+    ${description}`)
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
