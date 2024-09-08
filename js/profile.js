@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = document.getElementById('name');
     if (loggedin) {
-        name.inn
+        name.innerText=`Welcome ${loggedin}`
     }
 });
