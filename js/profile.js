@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = document.getElementById('name');
     if (loggedin) {
-        loginLink.style.display = 'none';
-        profile.style.display = 'block';
+        name.inn
     }
 });
