@@ -75,6 +75,9 @@
 <div id = "eventform"class="eventform" style="display: none;">
   <h3 style = "text-align:center;"> Create an Event</h1>
   <form action="/createevent" method="post">
+    <label for="name" placeholder:>Event Name:</label>
+    <input type="text" id="name" name="name" required>
+</br>
       <label for="location" placeholder:>Event location:</label>
       <input type="text" id="location" name="location" required>
   </br>
