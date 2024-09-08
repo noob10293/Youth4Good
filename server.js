@@ -26,7 +26,7 @@ class event{
 let users = {"bob":"1234","e":"1"};
 let events = [new event("Planting Trees for the Future", "somewhere", "date"
 , "Join our tree-planting initiative to help make our planet greener."),
-new event(Planting Trees for the Future")];
+new event("Planting Trees for the Future", "")];
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
