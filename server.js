@@ -42,10 +42,6 @@ app.post('/register', (req, res) => {
   res.send('Registration successful! <a href="/login.html">Login</a>');
 });
 
-app.get('/events.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'events.html'));
-});
-
 // Handle login form submission
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
@@ -58,6 +54,10 @@ app.post('/login', (req, res) => {
   }else {
     res.send('Invalid credentials. <a href="login.html">Try again</a>');
   }
+});
+
+app.get('/events.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'events.html'));
 });
 
 // Handle event form submission
