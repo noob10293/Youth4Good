@@ -16,6 +16,7 @@ app.use(express.static(__dirname));
 
 // In-memory storage for users (for simplicity)
 let users = {"bob":"1234","e":"1"};
+let users = {"bob":"1234","e":"1"};
 
 // Handle registration form submission
 app.post('/register', (req, res) => {
@@ -45,8 +46,8 @@ app.post('/login', (req, res) => {
 });
 
 // Handle event form submission
-app.post('/eventform', (req, res) => {
-  const { username, password } = req.body;
+app.post('/createevent', (req, res) => {
+  const { location,date,description } = req.body;
 
   if (users[username] && users[username] === password) {
     res.cookie('username', username, { httpOnly: true });
