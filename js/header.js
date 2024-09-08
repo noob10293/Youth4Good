@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedin = getCookie('localusername');
 
     // Hide login link if user is logged in
-    const eventform = document.getElementById('eventform');
+    const loginLink = document.getElementById('login');
+    const profile = document.getElementById('profile');
     if (loggedin) {
-        eventform.style.display = 'block';
+        loginLink.style.display = 'none';
+        profile.style.display = 'block';
     }
 });
